@@ -23,7 +23,7 @@ class App extends Component {
   
   changeMenu = (type) => {
     this.setState({
-      news: type
+      news: this.state.allNews[type]
     })
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="app">
         <SearchForm />
-        <Menu changeMenu={this.changeMenu} news={this.state.allNews}/>
+        <Menu changeMenu={this.changeMenu} types={Object.keys(this.state.allNews)}/>
         <NewsContainer news={this.state.news}/>
       </div>
     );
