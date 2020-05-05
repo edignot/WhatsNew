@@ -1,0 +1,32 @@
+.menu-img {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.425), rgba(146, 146, 146, 0.9)), url();
+    background-attachment: fixed;
+    height: 30vh;
+    display: flex;
+}
+
+h1 {
+    margin: auto;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.type-container {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.type {
+    padding: 10px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    border-bottom: 5px solid #fff;
+}
+
+.type:hover {
+    border-bottom: 5px solid #ffe601;
+    transition: border-bottom .5s;
+    cursor: pointer;
+}
+

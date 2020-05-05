@@ -1,13 +1,19 @@
 .search {
-    align-self: flex-end;
-    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
 }
 
 .search-input,
 .search-button {
     font-size: 1.5rem;
+    padding: 5px;
+}
+
+.search-input {
+    border-radius: 7px 0 0 7px;
 }
 
 .search-button {
-    
+    border-radius: 0 7px 7px 0;
 }

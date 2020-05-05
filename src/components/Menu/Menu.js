@@ -3,12 +3,14 @@ import './Menu.css'
 
 const Menu = (props) => {
 let types = Object.keys(props.news)
-types.map(type => <li className="type">{type}</li>)
+let categories = types.map(type => <li className="type">{type}</li>)
     return (
         <nav>
-            <div>BACKGROUND IMAGE</div>
-            <ul>
-                { types }
+            <div className="menu-img">
+                <h1> What's New?</h1>
+            </div>
+            <ul className="type-container">
+                { categories }
             </ul>
         </nav>
     )
