@@ -1,15 +1,16 @@
 import React from 'react';
 import './Menu.css'
 
-const Menu = () => {
+const Menu = (props) => {
+let types = Object.keys(props.news)
+let categories = types.map(type => <li className="type">{type}</li>)
     return (
         <nav>
-            <ul>
-                <li>Local News</li>
-                <li>Science</li>
-                <li>Entertainment</li>
-                <li>Technology</li>
-                <li>Health</li>
+            <div className="menu-img">
+                <h1> What's New?</h1>
+            </div>
+            <ul className="type-container">
+                { categories }
             </ul>
         </nav>
     )

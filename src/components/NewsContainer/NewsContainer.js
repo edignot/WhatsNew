@@ -2,16 +2,18 @@ import React from 'react';
 import './NewsContainer.css'
 import NewsArticle from '../NewsArticle/NewsArticle'
 
-const NewsContainer = () => {
+const NewsContainer = (props) => {
     return (
         <section className="container">
-            <NewsArticle 
-            key="id"
-            img="image" 
-            head="head" 
-            text="text" 
-            link="adress"
-            />
+            {props.news.map(item => {
+                return <NewsArticle
+                    key={item.id}
+                    head={item.headline}
+                    text={item.description}
+                    img={item.img} 
+                    link={item.url}
+                />
+            })}
         </section>
     )
 }
