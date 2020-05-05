@@ -11,6 +11,7 @@ const NewsContainer = (props) => {
                     head={item.headline}
                     text={item.description}
                     img={item.img} 
+                    link={item.url}
                 />
             })}
         </section>
