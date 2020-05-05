@@ -14,13 +14,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      news: {
+      allNews: {
         local, 
         entertainment, 
         health, 
         science, 
         technology
-      }
+      },
+      news: local
     }
   }
 
@@ -28,8 +29,8 @@ class App extends Component {
     return (
       <div className="app">
         <SearchForm />
-        <Menu news={this.state.news}/>
-        <NewsContainer />
+        <Menu news={this.state.allNews}/>
+        <NewsContainer news={this.state.news}/>
       </div>
     );
   }
