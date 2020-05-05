@@ -3,33 +3,35 @@ import './App.css';
 import SearchForm from '../SearchForm/SearchForm'
 import Menu from '../Menu/Menu'
 import NewsContainer from '../NewsContainer/NewsContainer'
-import local from '../../data/local'
-import entertainment from '../../data/entertainment.js'
-import health from '../../data/health.js'
-import science from '../../data/science.js'
-import technology from '../../data/technology.js'
-
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      allNews: {
-        local, 
-        entertainment, 
-        health, 
-        science, 
-        technology
-      },
-      news: local
+      allNews: {},
+      news: []
     }
+  }
+
+  componentDidMount() {
+    fetch('https://whats-new-api.herokuapp.com/api/v1/news')
+    .then(data => data.json())
+    .then(data => this.setState({
+      allNews: data, 
+      news: data.local}))
+  }
+  
+  changeMenu = (type) => {
+    this.setState({
+      news: type
+    })
   }
 
   render () {
     return (
       <div className="app">
         <SearchForm />
-        <Menu news={this.state.allNews}/>
+        <Menu changeMenu={this.changeMenu} news={this.state.allNews}/>
         <NewsContainer news={this.state.news}/>
       </div>
     );
