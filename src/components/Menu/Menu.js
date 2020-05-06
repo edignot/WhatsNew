@@ -1,8 +1,16 @@
-import React from 'react';
+import React from 'react'
 import './Menu.css'
 
 const Menu = (props) => {
-let categories = props.types.map(type => <li onClick={() => props.changeMenu(type)} className="type">{type}</li>)
+    let categories = props.types.map(type => {
+        return <li 
+            onClick={() => props.changeMenu(type)} 
+            className="type"
+            key={type}
+            >{type}
+        </li>
+    })
+    
     return (
         <nav>
             <div className="menu-img">
@@ -15,4 +23,4 @@ let categories = props.types.map(type => <li onClick={() => props.changeMenu(typ
     )
 }
 
-export default Menu;
+export default Menu
