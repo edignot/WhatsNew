@@ -2,8 +2,7 @@ import React from 'react';
 import './Menu.css'
 
 const Menu = (props) => {
-let types = Object.keys(props.news)
-let categories = types.map(type => <li className="type">{type}</li>)
+let categories = props.types.map(type => <li onClick={() => props.changeMenu(type)} className="type">{type}</li>)
     return (
         <nav>
             <div className="menu-img">
