@@ -26,6 +26,7 @@ class SearchForm extends Component {
                     onChange={this.updateInput}
                     className='search-input'
                     placeholder='Search for News'
+                    value={this.state.searchInput}
                     type='text'
                 />
                 <button 

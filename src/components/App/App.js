@@ -39,6 +39,7 @@ class App extends Component {
     })
   }
 
+
   render () {
     return (
       <div className='app'>
@@ -49,6 +50,7 @@ class App extends Component {
           types={Object.keys(this.state.allNews)} 
         />
         <NewsContainer news={this.state.news} />
+        {!this.state.news.length && <h2 className="search-message">Nothing found!</h2>}
       </div>
     )
   }

@@ -9,3 +9,9 @@
   text-align: center;
   width: 100%;
 }
+
+.search-message {
+  font-size: 3rem;
+  padding: 50px;
+  color: #ffe601;
+}
