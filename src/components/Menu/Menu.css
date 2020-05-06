@@ -17,7 +17,8 @@ h1 {
     list-style: none;
 }
 
-.type {
+.type,
+.type-selected {
     padding: 10px;
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -28,5 +29,9 @@ h1 {
     border-bottom: 5px solid #ffe601;
     transition: border-bottom .5s;
     cursor: pointer;
+}
+
+.type-selected {
+    border-bottom: 5px solid #ffe601;
 }
 

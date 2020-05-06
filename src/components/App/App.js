@@ -8,7 +8,8 @@ class App extends Component {
     super();
     this.state = {
       allNews: {},
-      news: []
+      news: [],
+      selected: ''
     }
   }
 
@@ -17,12 +18,15 @@ class App extends Component {
     .then(data => data.json())
     .then(data => this.setState({
       allNews: data, 
-      news: data.local}))
+      news: data.local,
+      selected: 'local'
+    }))
   }
   
   changeMenu = (type) => {
     this.setState({
-      news: this.state.allNews[type]
+      news: this.state.allNews[type],
+      selected: type
     })
   }
 
@@ -37,10 +41,11 @@ class App extends Component {
 
   render () {
     return (
-      <div className="app">
+      <div className='app'>
         <SearchForm searchNews={this.searchNews} />
         <Menu 
-          changeMenu={this.changeMenu} 
+          changeMenu={this.changeMenu}
+          selected={this.state.selected} 
           types={Object.keys(this.state.allNews)} 
         />
         <NewsContainer news={this.state.news} />
