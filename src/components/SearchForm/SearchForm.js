@@ -31,7 +31,7 @@ class SearchForm extends Component {
                 />
                 <button 
                     onClick={this.searchNews}
-                    className='search-button'
+                    className='search-btn'
                 >
                     SEARCH
                 </button>

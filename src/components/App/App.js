@@ -3,6 +3,7 @@ import './App.css';
 import SearchForm from '../SearchForm/SearchForm'
 import Menu from '../Menu/Menu'
 import NewsContainer from '../NewsContainer/NewsContainer'
+import NotFound from '../NotFound/NotFound'
 class App extends Component {
   constructor() {
     super();
@@ -50,7 +51,7 @@ class App extends Component {
           types={Object.keys(this.state.allNews)} 
         />
         <NewsContainer news={this.state.news} />
-        {!this.state.news.length && <h2 className="search-message">Nothing found!</h2>}
+        <NotFound status={this.state.news.length}/>
       </div>
     )
   }
