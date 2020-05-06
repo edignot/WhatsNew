@@ -10,7 +10,7 @@ const NewsContainer = (props) => {
         />
     })
     return (
-        <section className="container">
+        <section className={props.status ? 'container' : 'hide'}>
             { articles }
         </section>
     )

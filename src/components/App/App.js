@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css';
+import './App.css'
 import SearchForm from '../SearchForm/SearchForm'
 import Menu from '../Menu/Menu'
 import NewsContainer from '../NewsContainer/NewsContainer'
@@ -50,7 +50,7 @@ class App extends Component {
           selected={this.state.selected} 
           types={Object.keys(this.state.allNews)} 
         />
-        <NewsContainer news={this.state.news} />
+        <NewsContainer news={this.state.news} status={this.state.news.length}/>
         <NotFound status={this.state.news.length}/>
       </div>
     )
