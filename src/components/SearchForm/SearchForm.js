@@ -1,13 +1,46 @@
-import React from 'react';
-import './SearchForm.css';
+import React, { Component } from 'react'
+import './SearchForm.css'
 
-const SearchForm = () => {
-    return (
-        <form className="search">
-            <input className="search-input" type="text"></input>
-            <button className="search-button">SEARCH</button>
-        </form>
-    )
+class SearchForm extends Component {
+    constructor() {
+        super()
+        this.state = {
+            searchInput: ''
+        }
+    }
+
+    updateInput = (e) => {
+        this.setState({ searchInput: e.target.value })
+    }
+
+    clearInput = () => {
+        this.setState({ searchInput: '' })
+    }
+
+    searchNews = (e) => {
+        e.preventDefault()
+        this.props.searchNews(this.state.searchInput)
+        this.clearInput()
+    }
+
+    render() {
+        return (
+            <form className="search">
+                <input 
+                    onChange={this.updateInput}
+                    className='search-input'
+                    placeholder='Search for News'
+                    type='text'
+                />
+                <button 
+                    onClick={this.searchNews}
+                    className='search-button'
+                >
+                    SEARCH
+                </button>
+            </form>
+        )
+    }
 }
 
-export default SearchForm;
+export default SearchForm

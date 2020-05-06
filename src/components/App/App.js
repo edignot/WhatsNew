@@ -3,7 +3,6 @@ import './App.css';
 import SearchForm from '../SearchForm/SearchForm'
 import Menu from '../Menu/Menu'
 import NewsContainer from '../NewsContainer/NewsContainer'
-
 class App extends Component {
   constructor() {
     super();
@@ -27,15 +26,27 @@ class App extends Component {
     })
   }
 
+  searchNews = (input) => {
+    const filteredNews = this.state.news.filter(n => {
+      return n.description.toLowerCase().includes(input.toLowerCase())
+    });
+    this.setState({
+      news: filteredNews
+    })
+  }
+
   render () {
     return (
       <div className="app">
-        <SearchForm />
-        <Menu changeMenu={this.changeMenu} types={Object.keys(this.state.allNews)}/>
-        <NewsContainer news={this.state.news}/>
+        <SearchForm searchNews={this.searchNews} />
+        <Menu 
+          changeMenu={this.changeMenu} 
+          types={Object.keys(this.state.allNews)} 
+        />
+        <NewsContainer news={this.state.news} />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
