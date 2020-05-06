@@ -13,14 +13,10 @@ class SearchForm extends Component {
         this.setState({ searchInput: e.target.value })
     }
 
-    clearInput = () => {
-        this.setState({ searchInput: '' })
-    }
-
     searchNews = (e) => {
         e.preventDefault()
         this.props.searchNews(this.state.searchInput)
-        this.clearInput()
+        this.setState({ searchInput: '' })
     }
 
     render() {
