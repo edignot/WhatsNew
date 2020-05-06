@@ -50,8 +50,8 @@ class App extends Component {
           selected={this.state.selected} 
           types={Object.keys(this.state.allNews)} 
         />
-        <NewsContainer news={this.state.news} status={this.state.news.length}/>
-        <NotFound status={this.state.news.length}/>
+        <NewsContainer news={this.state.news} status={this.state.news.length} />
+        <NotFound status={this.state.news.length} selected={this.state.selected} changeMenu={this.changeMenu}/>
       </div>
     )
   }
