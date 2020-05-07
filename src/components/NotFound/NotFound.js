@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './NotFound.css'
 
 const NotFound = (props) => {
@@ -14,6 +15,12 @@ const NotFound = (props) => {
             <h2 className='search-message'>Nothing found!</h2>
         </div>
     )
+}
+
+NotFound.propTypes = {
+    status: PropTypes.number,
+    selected: PropTypes.string,
+    changeMenu: PropTypes.func
 }
 
 export default NotFound
