@@ -9,11 +9,17 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edignot/WhatsNew.git"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,6 +37,8 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^9.5.0"
-  }
+    "@testing-library/react": "^9.5.0",
+    "gh-pages": "^2.2.0"
+  },
+  "homepage": "http://edignot.github.io/WhatsNew"
 }
