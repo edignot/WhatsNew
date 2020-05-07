@@ -15,7 +15,7 @@ const Menu = (props) => {
     return (
         <nav>
             <div className='menu-img'>
-                <h1> What's New?</h1>
+                <h1 onClick={() => {props.changeMenu('local')}}> What's New?</h1>
             </div>
             <ul className='type-container'>
                 { categories }

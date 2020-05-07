@@ -40,18 +40,22 @@ class App extends Component {
     })
   }
 
-
   render () {
     return (
       <div className='app'>
         <SearchForm searchNews={this.searchNews} />
         <Menu 
-          changeMenu={this.changeMenu}
-          selected={this.state.selected} 
-          types={Object.keys(this.state.allNews)} 
+            changeMenu={this.changeMenu}
+            selected={this.state.selected} 
+            types={Object.keys(this.state.allNews)} 
         />
-        <NewsContainer news={this.state.news} status={this.state.news.length} />
-        <NotFound status={this.state.news.length} selected={this.state.selected} changeMenu={this.changeMenu}/>
+        <NewsContainer 
+            news={this.state.news} 
+            status={this.state.news.length} />
+        <NotFound 
+            status={this.state.news.length} 
+            selected={this.state.selected} 
+            changeMenu={this.changeMenu} />
       </div>
     )
   }
