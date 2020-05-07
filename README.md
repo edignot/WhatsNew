@@ -12,7 +12,7 @@ This was a solo project during Module 3 at [Turing School of Software & Design](
 ---
 ### User Story : 
 #### 1. User should see 'Local' news by default when opening App
-
+![1](/img/1.png)
 #### 2. User should be able to choose different News category and open each article by clicking 'READ MORE'
 
 #### 3. User should be able to search News by descriptions in current News category
