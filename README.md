@@ -8,7 +8,7 @@ This was a solo project during Module 3 at [Turing School of Software & Design](
 
 ---
 ### User Interaction:
-
+![1](/img/1.gif)
 ---
 ### User Story : 
 #### 1. User should see 'Local' news by default when opening App
