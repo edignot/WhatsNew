@@ -1,6 +1,6 @@
 # What's New? - News App 
 
-## https://edignot.github.io/
+## https://github.com/edignot/WhatsNew
 
 ### Abstract
 This is React app that displays news articles fetched from an API. User can choose different News categories and search in that category by matching keywords in article description
