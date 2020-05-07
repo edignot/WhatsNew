@@ -1,0 +1,19 @@
+.hide {
+    display: none;
+}
+
+.not-found {
+    padding: 50px;
+}
+
+.back-btn {
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    color: #fff;
+    background-color: #ffe601;
+}
