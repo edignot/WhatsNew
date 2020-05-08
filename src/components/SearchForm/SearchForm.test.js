@@ -28,7 +28,7 @@ describe('NewsArticle', () => {
         expect(component.getByPlaceholderText('Search for News').value).toEqual('science')
     })
 
-    it('Should call searchNews with the correct arguments', () => {
+    it('Should call searchNews with correct arguments', () => {
       fireEvent.change(component.getByPlaceholderText('Search for News'), {target: {value: 'science'}})
       fireEvent.click(component.getByText('SEARCH'))
       expect(component.getByPlaceholderText('Search for News').value).toEqual('');
