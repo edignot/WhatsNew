@@ -9,25 +9,33 @@ describe('<NewsContainer />', () => {
     beforeEach(() => {
       component = render(
         <NewsContainer  
-            news={[{
-                id:1, 
-                headline:'headline', 
-                description: 'description', 
-                url: 'url'
-            }]}
-            status={1}
+            news={[
+                {
+                    id:1, 
+                    headline:'headline', 
+                    description: 'description', 
+                    url: 'url'
+                },
+                {
+                    id:2, 
+                    headline:'headline2', 
+                    description: 'description2', 
+                    url: 'url2'
+                },
+            ]}
+            status={2}
             />,
       )
     })
   
     afterEach(cleanup)
 
+    it('Should display NewsContainer if there is 1 or more articles displayed', () => {
+        expect(component.getByTestId('container')).toBeInTheDocument();
+    })
+
     it('Displays NewsArticle info correctly inside NewsContainer', () => {
         expect(component.getByText('description')).toBeInTheDocument();
         expect(component.getByText('headline')).toBeInTheDocument();
-    })
-
-    it('Returns className container if status is >= 1', () => {
-        
     })
 })

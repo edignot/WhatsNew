@@ -11,7 +11,10 @@ const NewsContainer = (props) => {
         />
     })
     return (
-        <section className={props.status ? 'container' : 'hide'}>
+        <section 
+            className={props.status ? 'container' : 'hide'}
+            data-testid={props.status ? 'container' : 'hide'}
+        >
             { articles }
         </section>
     )
