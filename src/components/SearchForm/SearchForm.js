@@ -22,7 +22,7 @@ class SearchForm extends Component {
 
     render() {
         return (
-            <form className="search">
+            <form className='search' data-testid='search'>
                 <input 
                     onChange={this.updateInput}
                     className='search-input'
