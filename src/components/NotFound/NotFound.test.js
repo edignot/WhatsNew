@@ -13,7 +13,7 @@ describe('<NotFound />', () => {
             status={1} 
             selected={'local'} 
             changeMenu={mockChangeMenu}
-            />,
+            />
       )
     })
   
