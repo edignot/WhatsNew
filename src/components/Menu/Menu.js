@@ -6,6 +6,7 @@ const Menu = (props) => {
     let categories = props.types.map(type => {
         return <li 
             className={props.selected === type ? 'type-selected' : 'type'}
+            data-testid={props.selected === type ? 'type-selected' : 'type'}
             onClick={() => props.changeMenu(type)}
             id={type} 
             key={type}
