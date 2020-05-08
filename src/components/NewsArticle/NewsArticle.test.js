@@ -1,16 +1,30 @@
 import React from 'react'
 import NewsArticle from './NewsArticle'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-describe('NewsArticle', () => {
-    it('Displays NewsArticle info correctly', () => {
-        const { getByText } = render(<NewsArticle  
-            description={'description'}
+describe('<NewsArticle />', () => {
+    let component
+
+    beforeEach(() => {
+      component = render(
+        <NewsArticle
+            id={1}  
             headline={'headline'}
-            />)
-        expect(getByText('description')).toBeInTheDocument();
-        expect(getByText('headline')).toBeInTheDocument();
-        expect(getByText('READ MORE')).toBeInTheDocument();
+            img={'img'}
+            description={'description'}
+            url={'url'}
+            />
+      )
+    })
+  
+    afterEach(cleanup)
+
+    it('Displays NewsArticle info correctly', () => {
+        expect(component.getByText('headline')).toBeInTheDocument()
+        expect(component.getByTestId('img')).toBeInTheDocument()
+        expect(component.getByText('description')).toBeInTheDocument()
+        expect(component.getByText('READ MORE')).toBeInTheDocument()
+        expect(component.getByTestId('url')).toBeInTheDocument()
     })
 })

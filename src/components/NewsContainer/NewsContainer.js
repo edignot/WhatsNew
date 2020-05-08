@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './NewsContainer.css'
 import NewsArticle from '../NewsArticle/NewsArticle'
 
@@ -10,10 +11,18 @@ const NewsContainer = (props) => {
         />
     })
     return (
-        <section className={props.status ? 'container' : 'hide'}>
+        <section 
+            className={props.status ? 'container' : 'hide'}
+            data-testid={props.status ? 'container' : 'hide'}
+        >
             { articles }
         </section>
     )
+}
+
+NewsContainer.propTypes = {
+    news: PropTypes.array,
+    status: PropTypes.number
 }
 
 export default NewsContainer

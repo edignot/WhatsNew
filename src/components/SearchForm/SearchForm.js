@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './SearchForm.css'
 
 class SearchForm extends Component {
@@ -21,7 +22,7 @@ class SearchForm extends Component {
 
     render() {
         return (
-            <form className="search">
+            <form className='search' data-testid='search'>
                 <input 
                     onChange={this.updateInput}
                     className='search-input'
@@ -38,6 +39,10 @@ class SearchForm extends Component {
             </form>
         )
     }
+}
+
+SearchForm.propTypes = {
+    searchNews: PropTypes.func,
 }
 
 export default SearchForm

@@ -1,10 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Menu.css'
 
 const Menu = (props) => {
     let categories = props.types.map(type => {
         return <li 
             className={props.selected === type ? 'type-selected' : 'type'}
+            data-testid={props.selected === type ? 'type-selected' : 'type'}
             onClick={() => props.changeMenu(type)}
             id={type} 
             key={type}
@@ -22,6 +24,12 @@ const Menu = (props) => {
             </ul>
         </nav>
     )
+}
+
+Menu.propTypes = {
+    changeMenu: PropTypes.func,
+    selected: PropTypes.string, 
+    types: PropTypes.array
 }
 
 export default Menu

@@ -9,13 +9,14 @@
 
 h1 {
     margin: auto;
-    font-size: 6rem;
+    font-size: 4rem;
     cursor: pointer;
     color: #fff;
 }
 
 .type-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     list-style: none;
 }
@@ -36,5 +37,20 @@ h1 {
 
 .type-selected {
     border-bottom: 5px solid #ffe601;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 5rem;
+    }
+    .type-container {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 6rem;
+    }
 }
 
