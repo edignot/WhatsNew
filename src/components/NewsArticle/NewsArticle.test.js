@@ -8,18 +8,23 @@ describe('<NewsArticle />', () => {
 
     beforeEach(() => {
       component = render(
-        <NewsArticle  
-            description={'description'}
+        <NewsArticle
+            id={1}  
             headline={'headline'}
-            />,
+            img={'img'}
+            description={'description'}
+            url={'url'}
+            />
       )
     })
   
     afterEach(cleanup)
 
     it('Displays NewsArticle info correctly', () => {
-        expect(component.getByText('description')).toBeInTheDocument();
-        expect(component.getByText('headline')).toBeInTheDocument();
-        expect(component.getByText('READ MORE')).toBeInTheDocument();
+        expect(component.getByText('headline')).toBeInTheDocument()
+        expect(component.getByTestId('img')).toBeInTheDocument();
+        expect(component.getByText('description')).toBeInTheDocument()
+        expect(component.getByText('READ MORE')).toBeInTheDocument()
+        expect(component.getByTestId('url')).toBeInTheDocument();
     })
 })
