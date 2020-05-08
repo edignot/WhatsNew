@@ -5,18 +5,20 @@ import '@testing-library/jest-dom/extend-expect'
 
 describe('NewsArticle', () => {
     let component
-    const mockSetQuery = jest.fn();
-  
+    const mockSearchNews = jest.fn()
+
     beforeEach(() => {
       component = render(
-        <SearchForm setQuery={mockSetQuery} />,
-      );
-    });
+        <SearchForm 
+            searchNews={mockSearchNews} 
+        />
+      )
+    })
   
-    afterEach(cleanup);
+    afterEach(cleanup)
 
     it('Search Input has a placeholder', () => {
-        expect(component.getByPlaceholderText('Search for News')).toBeInTheDocument();
+        expect(component.getByPlaceholderText('Search for News')).toBeInTheDocument()
     })
 
     it('Search Input has a placeholder', () => {
@@ -24,4 +26,7 @@ describe('NewsArticle', () => {
         expect(component.getByPlaceholderText('Search for News').value).toEqual('science')
     })
 
+    it('Should call searchNews with the correct arguments', () => {
+      
+    })
 })

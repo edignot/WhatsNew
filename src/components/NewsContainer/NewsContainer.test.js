@@ -1,19 +1,33 @@
 import React from 'react'
 import NewsContainer from './NewsContainer'
-import { render } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-describe('NewsArticle', () => {
-    it('Displays NewsArticle info correctly', () => {
-        const { getByText } = render(<NewsContainer  
+describe('<NewsContainer />', () => {
+    let component
+
+    beforeEach(() => {
+      component = render(
+        <NewsContainer  
             news={[{
                 id:1, 
                 headline:'headline', 
                 description: 'description', 
                 url: 'url'
             }]}
-            />)
-        expect(getByText('description')).toBeInTheDocument();
-        expect(getByText('headline')).toBeInTheDocument();
+            status={1}
+            />,
+      )
+    })
+  
+    afterEach(cleanup)
+
+    it('Displays NewsArticle info correctly inside NewsContainer', () => {
+        expect(component.getByText('description')).toBeInTheDocument();
+        expect(component.getByText('headline')).toBeInTheDocument();
+    })
+
+    it('Returns className container if status is >= 1', () => {
+        
     })
 })
