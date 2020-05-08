@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect'
 
 describe('<NotFound />', () => {
     let component
-    const mockChangeMenu = jest.fn();
+    const mockChangeMenu = jest.fn()
 
     beforeEach(() => {
       component = render(
@@ -20,11 +20,11 @@ describe('<NotFound />', () => {
     afterEach(cleanup)
 
     it('Should display container only if nothing is found', () => {
-      expect(component.getByTestId('not-found')).toBeInTheDocument();
+      expect(component.getByTestId('not-found')).toBeInTheDocument()
     })
 
     it('Should display Nothing Found message', () => {
-        expect(component.getByText('Nothing found!')).toBeInTheDocument();
+        expect(component.getByText('Nothing found!')).toBeInTheDocument()
     })
 
     it('Should call changeMenu with correct arguments', () => {

@@ -22,9 +22,9 @@ describe('<NewsArticle />', () => {
 
     it('Displays NewsArticle info correctly', () => {
         expect(component.getByText('headline')).toBeInTheDocument()
-        expect(component.getByTestId('img')).toBeInTheDocument();
+        expect(component.getByTestId('img')).toBeInTheDocument()
         expect(component.getByText('description')).toBeInTheDocument()
         expect(component.getByText('READ MORE')).toBeInTheDocument()
-        expect(component.getByTestId('url')).toBeInTheDocument();
+        expect(component.getByTestId('url')).toBeInTheDocument()
     })
 })

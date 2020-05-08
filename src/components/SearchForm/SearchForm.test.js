@@ -20,7 +20,7 @@ describe('NewsArticle', () => {
     it('Should display correct content', () => {
         expect(component.getByPlaceholderText('Search for News')).toBeInTheDocument()
         expect(component.getByText('SEARCH')).toBeInTheDocument()
-        expect(component.getByTestId('search')).toBeInTheDocument();
+        expect(component.getByTestId('search')).toBeInTheDocument()
     })
 
     it('Should update search value', () => {
@@ -31,7 +31,7 @@ describe('NewsArticle', () => {
     it('Should call searchNews with correct arguments', () => {
       fireEvent.change(component.getByPlaceholderText('Search for News'), {target: {value: 'science'}})
       fireEvent.click(component.getByText('SEARCH'))
-      expect(component.getByPlaceholderText('Search for News').value).toEqual('');
+      expect(component.getByPlaceholderText('Search for News').value).toEqual('')
       expect(mockSearchNews).toHaveBeenCalledWith('science')
     })
 })

@@ -24,18 +24,18 @@ describe('<NewsContainer />', () => {
                 },
             ]}
             status={2}
-            />,
+            />
       )
     })
   
     afterEach(cleanup)
 
     it('Should display NewsContainer if there is 1 or more articles displayed', () => {
-        expect(component.getByTestId('container')).toBeInTheDocument();
+        expect(component.getByTestId('container')).toBeInTheDocument()
     })
 
     it('Displays NewsArticle info correctly inside NewsContainer', () => {
-        expect(component.getByText('description')).toBeInTheDocument();
-        expect(component.getByText('headline')).toBeInTheDocument();
+        expect(component.getByText('description')).toBeInTheDocument()
+        expect(component.getByText('headline')).toBeInTheDocument()
     })
 })
