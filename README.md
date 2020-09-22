@@ -2,11 +2,11 @@
 
 ## https://edignot.github.io/WhatsNew/
 
+![whats new](/whatsnew.jpg)
+
 ### About
 This is React app that displays news articles fetched from an API. User can choose different News categories and search in that category by matching keywords in article description
 This was a solo project during Module 3 at [Turing School of Software & Design](https://turing.io/) and it's the first one using React.
-
-![whats new](/whatsnew.jpg)
 
 ---
 ### User Interaction:
